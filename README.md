@@ -1,65 +1,65 @@
-Bitcoin Testnet Wallet (Web PWA)
+# OneCurrency
 
-Overview
-- Simple, non-custodial Bitcoin testnet wallet for first-time users.
-- Implements BIP39 + BIP84 (bech32 addresses) on testnet.
-- Receive with QR, send with fee preview, and basic balance.
-- Testnet-only. Do not use for real BTC.
+OneCurrency is an open-source, self-custody Bitcoin wallet that runs in the browser as a web PWA. Your keys stay on your device — OneCurrency never holds your Bitcoin.
 
-Security & Recovery
-- Encrypted backup: Create an encrypted JSON backup of your seed using a passphrase. The app uses PBKDF2‑SHA256 (150k) to derive a 256‑bit AES‑GCM key with random salt and IV.
-- Decrypt & import: Paste or scan the encrypted JSON and enter your passphrase; the app validates the decrypted mnemonic before importing.
+Live app: https://onecurrency.net
+
+## Overview
+- Non-custodial Bitcoin wallet for **mainnet and testnet**, built on BIP39 + BIP84 (native SegWit / bech32 addresses).
+- Create a wallet, receive with QR codes, and send with a full fee preview before you confirm.
+- Testnet mode includes a built-in faucet flow, so first-time users can practice with test coins before using real BTC.
+- Bulk send: paste mixed address types, split a total evenly, and send with one platform fee and one miner fee.
+- Optional LNbits tab for creating Lightning invoices with your own LNbits instance.
+
+## Fees — stated plainly
+- **Platform fee: 3,337 sats per send transaction** (0.00003337 BTC), fixed.
+- Plus the Bitcoin network (miner) fee, which varies and is always shown before you send.
+- Receiving is free — no platform fee on receiving.
+
+## Security & Recovery
+- Encrypted backup: create an encrypted JSON backup of your seed using a passphrase. The app uses PBKDF2-SHA256 (150,000 iterations) to derive a 256-bit AES-GCM key with a random salt and IV.
+- The decrypted seed is held in the session only and expires after 30 minutes.
+- Decrypt & import: paste or scan the encrypted JSON and enter your passphrase; the app validates the decrypted mnemonic before importing.
 - Tips:
   - Choose a long, unique passphrase and store it securely.
   - Keep multiple backups (encrypted JSON and QR). Do not lose your passphrase.
-  - Never share your mnemonic or passphrase.
+  - Never share your mnemonic or passphrase with anyone. OneCurrency will never ask for them.
 
-Stack
+## Stack
 - React + Vite + TypeScript
 - bitcoinjs-lib, bip39, bip32, tiny-secp256k1
-- Blockstream testnet API for UTXOs, fees, and broadcasting
+- Esplora / Blockstream APIs for UTXOs, fee estimates, and broadcasting
 
-Run Locally
+## Run Locally
 1) Install Node.js 18+.
 2) From this folder, install dependencies:
    npm install
 3) Start the dev server:
    npm run dev
 4) Open the URL printed (usually http://localhost:5173/).
+5) Production web build:
+   npm run build:web
 
-LNbits Setup
-1) Run or use an LNbits instance (e.g., your own or a hosted one).
-2) Create a wallet and copy the Invoice/Read API key (NOT admin key required here).
+## LNbits Setup
+1) Run or use an LNbits instance (your own or a hosted one).
+2) Create a wallet and copy the Invoice/Read API key (the admin key is NOT required here).
 3) In the app, open the LNbits tab and paste:
    - LNbits URL (e.g., https://legend.lnbits.com)
    - Invoice/Read API key
-4) Create an invoice with amount in sats and optional memo. Copy or scan the BOLT11.
+4) Create an invoice with an amount in sats and an optional memo. Copy or scan the BOLT11.
 
-Browser/CORS Notes
-- LNbits must allow CORS from the app’s origin to call its REST API directly from the browser.
-- If your LNbits instance doesn’t permit CORS, place a simple reverse proxy on the same origin as the app to forward requests to LNbits.
+Browser/CORS note: LNbits must allow CORS from the app origin to call its REST API directly from the browser. If it does not, place a simple reverse proxy on the same origin as the app to forward requests to LNbits.
 
-How To Test
-1) On first load, click "Create New Wallet". Write down the 12-word seed.
-2) Go to the Receive tab; copy the testnet address and fund it using a faucet:
-   - Blockstream Testnet Faucet: search online for current link
-   - Mempool Space Testnet Faucet
-3) Click Refresh to see balance update (it may take a moment).
-4) Go to Send tab:
-   - Paste another testnet address (starts with tb1...)
-   - Enter amount in sats (e.g., 5000)
-   - Click Send. You should see a txid upon broadcast.
-5) Track confirmations on a testnet explorer (e.g., blockstream.info/testnet/tx/<txid>).
+## How To Test (testnet)
+1) On first load, create a new wallet in testnet mode. Write down the 12-word seed.
+2) Go to Receive, copy the testnet address, and fund it from a testnet faucet.
+3) Refresh to see the balance update (it may take a moment).
+4) Go to Send, paste another testnet address (starts with tb1...), enter an amount in sats, review the fee preview — platform fee 3,337 sats plus the network fee — and send. You will see a txid on broadcast.
+5) Track confirmations on a testnet explorer.
 
-Notes & Limits
-- Keys are stored unencrypted in browser localStorage for demo simplicity.
-- Only the first external address (index 0) is used for receiving and spending.
-- Input selection is basic and optimized for simplicity, not optimal fee usage.
-- PSBT building assumes P2WPKH UTXOs from the first address only.
+## Notes
+- OneCurrency is experimental, self-custody software. You are responsible for your own keys and backups: if you lose your seed phrase and passphrase, no one can recover your funds.
+- See AUDIT.md and AUDIT-2026-11-17.md for security review notes.
 
-Production Hardening Ideas
-- Encrypt seed at rest with a passphrase (WebCrypto).
-- Derive multiple addresses and scan gap limit.
-- Full change management and coin control.
-- Replace external API with your own backend or a full node (e.g., Electrum, Esplora).
-- Add unit tests and e2e tests.
+## License
+MIT — see LICENSE.
