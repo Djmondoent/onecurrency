@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Wallet Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bitcoin Wallet Dashboard</h1>
+    </header>
+
+    <main>
+        <div class="balance-container">
+            <p>Your Bitcoin balance: <span id="bitcoinBalance">Loading...</span> BTC</p>
+        </div>
+
+        <div class="button-container">
+            <button onclick="showSendModal()">Send Bitcoin</button>
+            <button onclick="showReceiveModal()">Receive Bitcoin</button>
+        </div>
+    </main>
+
+    <!-- Modals for Send and Receive -->
+    <div class="modal" id="sendModal">
+        <span class="close" onclick="closeModal('sendModal')">&times;</span>
+        <h2>Send Bitcoin</h2>
+        <!-- Add form and input fields for sending Bitcoin -->
+    </div>
+
+    <div class="modal" id="receiveModal">
+        <span class="close" onclick="closeModal('receiveModal')">&times;</span>
+        <h2>Receive Bitcoin</h2>
+        <!-- Display QR code or address for receiving Bitcoin -->
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Bitcoin Wallet. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

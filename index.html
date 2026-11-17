@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow" />
+    <title>OneCurrency Bitcoin Wallet | Self-Custody, Secure Backups & Faucet</title>
+    <meta name="description" content="OneCurrency is a self-custody Bitcoin wallet with secure backups and a built-in faucet. Send and receive BTC with transparent fees." />
+    <meta name="keywords" content="OneCurrency Bitcoin wallet, Bitcoin wallet, BTC wallet, non-custodial wallet, self-custody wallet, seed phrase backup, faucet, send Bitcoin, receive Bitcoin" />
+    <meta name="application-name" content="OneCurrency" />
+    <link rel="canonical" href="https://onecurrency.net/" />
+    <meta name="theme-color" content="#000000" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'self' https://blockstream.info https://blockstream.info/testnet https://mempool.space https://mempool.space/testnet https://wgvptzxjdpeycfdietyd.functions.supabase.co https://*.supabase.co https://*.supabase.com https://api.coingecko.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; manifest-src 'self'; upgrade-insecure-requests; block-all-mixed-content" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://onecurrency.net/" />
+    <meta property="og:site_name" content="OneCurrency" />
+    <meta property="og:title" content="OneCurrency Bitcoin Wallet | Self-Custody, Secure Backups & Faucet" />
+    <meta property="og:description" content="Self-custody Bitcoin wallet with secure backups and a built-in faucet. Send and receive BTC with transparent fees." />
+    <meta property="og:image" content="https://onecurrency.net/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OneCurrency Bitcoin Wallet | Self-Custody, Secure Backups & Faucet" />
+    <meta name="twitter:description" content="Self-custody Bitcoin wallet with secure backups and a built-in faucet. Send and receive BTC with transparent fees." />
+    <meta name="twitter:image" content="https://onecurrency.net/assets/og.png" />
+    <link rel="icon" type="image/webp" href="/onecurenlogo.webp?v=20260506b" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=20260506b" />
+    <link rel="shortcut icon" href="/favicon.ico?v=20260506b" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260506b" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "OneCurrency",
+            "url": "https://onecurrency.net/",
+            "logo": "https://onecurrency.net/onecurenlogo.webp"
+          },
+          {
+            "@type": "WebSite",
+            "name": "OneCurrency",
+            "url": "https://onecurrency.net/"
+          }
+        ]
+      }
+    </script>
+    <style>
+      html, body { height: 100%; margin: 0; }
+      body { background:#000; color:#e2e8f0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+      .wrap { height:100%; display:flex; align-items:center; justify-content:center; }
+      .card { background:#0b1220; border:1px solid rgba(148,163,184,0.18); border-radius:14px; padding:20px 22px; box-shadow:0 10px 30px rgba(0,0,0,0.6); text-align:center; width:min(520px,92vw); }
+      .row { display:flex; gap:12px; align-items:center; justify-content:center; }
+      .logo { width:44px; height:44px; border-radius:10px; object-fit:cover; box-shadow:0 2px 10px rgba(0,0,0,0.3); }
+      .spinner { width:42px; height:42px; border-radius:50%; border:3px solid rgba(226,232,240,0.25); border-top-color:#22d3ee; animation:spin 1s linear infinite; margin:10px auto; }
+      .brand { font-weight:600; color:#cbd5e1; margin-top:6px; }
+      .muted { color:#94a3b8; margin-top:8px; }
+      .seo-copy { color:#94a3b8; margin-top:12px; font-size:14px; line-height:1.55; }
+      .seo-links { margin-top:10px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+      .seo-links a { color:#22d3ee; text-decoration:none; font-weight:600; }
+      .seo-heading { margin:12px 0 0; font-size:18px; color:#e2e8f0; }
+      .seo-sub { margin:6px 0 0; font-size:13px; color:#94a3b8; line-height:1.5; }
+      .seo-features { margin:10px 0 0; padding:0; list-style:none; display:grid; gap:6px; }
+      .seo-features li { color:#cbd5e1; font-size:13px; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+  </head>
+  <body>
+    <form id="noop-pass-form" style="display:none" aria-hidden="true"></form>
+    <div id="app-loader" class="wrap">
+      <div class="card">
+        <div class="row">
+          <img class="logo" src="/onecurenlogo.webp" alt="OneCurrency" />
+          <div class="brand">Loading OneCurrency</div>
+        </div>
+        <div class="spinner" aria-label="Loading" role="progressbar"></div>
+        <div class="muted">Starting app</div>
+        <div class="seo-heading">OneCurrency Bitcoin Wallet</div>
+        <div class="seo-sub">Self-custody wallet with secure backups and a built-in faucet.</div>
+        <div class="seo-copy">
+          OneCurrency is a self-custody Bitcoin wallet with secure seed phrase backups and a built-in faucet.
+          Send and receive BTC with transparent fees while keeping keys on your device.
+        </div>
+        <ul class="seo-features">
+          <li>Non-custodial: you control the keys.</li>
+          <li>Encrypted JSON and QR backups.</li>
+          <li>Built-in faucet for free sats.</li>
+        </ul>
+        <div class="seo-links">
+          <a href="/tutorial.html">Tutorial</a>
+          <a href="/faq.html">FAQ</a>
+          <a href="https://onecurrency.net/onefaucet/">Faucet</a>
+        </div>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

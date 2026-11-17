@@ -1,0 +1,23 @@
+[Unit]
+Description=OneCurrency funding checkout API
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/lib/onecurrency-funding
+EnvironmentFile=/etc/onecurrency/funding.env
+# Set the node executable path appropriate for this server (Node 20+).
+ExecStart=/usr/bin/node /var/lib/onecurrency-funding/funding-api.cjs
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+ReadOnlyPaths=/var/lib/onecurrency-funding
+
+[Install]
+WantedBy=multi-user.target

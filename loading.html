@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="refresh" content="3; url=dist/index.html" />
+    <title>OneCurrency — Loading…</title>
+    <link rel="icon" href="/onecurenlogo.png" />
+    <style>
+      html, body { height: 100%; margin: 0; }
+      body { background:#0f172a; color:#e2e8f0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+      .wrap { height:100%; display:flex; align-items:center; justify-content:center; }
+      .card { background:#0b1220; border:1px solid rgba(148,163,184,0.18); border-radius:14px; padding:20px 22px; box-shadow:0 10px 30px rgba(2,8,23,0.6); text-align:center; width:min(520px,92vw); }
+      .row { display:flex; gap:12px; align-items:center; justify-content:center; }
+      .logo { width:44px; height:44px; border-radius:10px; object-fit:cover; box-shadow:0 2px 10px rgba(0,0,0,0.3); }
+      .spinner { width:42px; height:42px; border-radius:50%; border:3px solid rgba(226,232,240,0.25); border-top-color:#22d3ee; animation:spin 1s linear infinite; margin:10px auto; }
+      .brand { font-weight:600; color:#cbd5e1; margin-top:6px; }
+      .muted { color:#94a3b8; margin-top:8px; }
+      a.btn { display:inline-block; color:#0b1220; background:linear-gradient(135deg,#22d3ee,#818cf8); text-decoration:none; padding:8px 12px; border-radius:10px; margin-top:12px; font-weight:600; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <div class="row">
+          <img class="logo" src="/onecurenlogo.png" alt="OneCurrency" />
+          <div class="brand">Loading OneCurrency…</div>
+        </div>
+        <div class="spinner" aria-label="Loading" role="progressbar"></div>
+        <div class="muted">Redirecting to app… If it doesn’t continue, use the button below.</div>
+        <a class="btn" id="go" href="dist/index.html">Open App</a>
+        <noscript>
+          <div class="muted" style="margin-top:8px;">JavaScript is required to continue. Click the button above.</div>
+        </noscript>
+      </div>
+    </div>
+    <script>
+      (function(){
+        try {
+          var target = 'dist/index.html';
+          // Use replace so back button doesn't come back to loader
+          setTimeout(function(){ location.replace(target); }, 800);
+        } catch (_) {}
+      })();
+    </script>
+  </body>
+  </html>
+

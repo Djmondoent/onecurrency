@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Currency Bitcoin Credit Union - Signup</title>
+    <!-- Include any necessary stylesheets or libraries here -->
+</head>
+<body>
+
+    <h1>Signup for One Currency Bitcoin Credit Union</h1>
+
+    <form action="/signup" method="post">
+        <!-- Personal Information -->
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="middleInitial">Middle Initial:</label>
+        <input type="text" id="middleInitial" name="middleInitial">
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="suffix">Suffix:</label>
+        <input type="text" id="suffix" name="suffix">
+
+        <!-- Address Information -->
+        <label for="address1">Address (1):</label>
+        <input type="text" id="address1" name="address1" required>
+
+        <label for="address2">Address (2):</label>
+        <input type="text" id="address2" name="address2">
+
+        <label for="country">Country/Region:</label>
+        <select id="country" name="country" required>
+            <option value="USA">United States of America</option>
+            <!-- Add other countries as needed -->
+        </select>
+
+        <label for="zipCode">Postal/Zip Code:</label>
+        <input type="text" id="zipCode" name="zipCode" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state">
+
+        <!-- Contact Information -->
+        <label for="email">Email address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="homePhone">Home Phone Number:</label>
+        <input type="tel" id="homePhone" name="homePhone" pattern="[0-9]{10}" placeholder="e.g., 1234567890" required>
+
+        <label for="cellPhone">Cell Phone Number:</label>
+        <input type="tel" id="cellPhone" name="cellPhone" pattern="[0-9]{10}" placeholder="e.g., 1234567890" required>
+
+        <label for="emailLanguage">Email Language Preference:</label>
+        <select id="emailLanguage" name="emailLanguage">
+            <option value="English">English</option>
+            <!-- Add other language options as needed -->
+        </select>
+
+        <!-- Login Information -->
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" name="userId" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirmPassword">Password Confirmation:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <!-- Security Questions -->
+        <label for="securityQuestion1">Password Hint Question 1:</label>
+        <select id="securityQuestion1" name="securityQuestion1" required>
+            <!-- Add security question options as needed -->
+        </select>
+        <label for="answer1">Password Hint Answer 1:</label>
+        <input type="text" id="answer1" name="answer1" required>
+
+        <label for="securityQuestion2">Password Hint Question 2:</label>
+        <select id="securityQuestion2" name="securityQuestion2" required>
+            <!-- Add security question options as needed -->
+        </select>
+        <label for="answer2">Password Hint Answer 2:</label>
+        <input type="text" id="answer2" name="answer2" required>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+</body>
+</html>
+

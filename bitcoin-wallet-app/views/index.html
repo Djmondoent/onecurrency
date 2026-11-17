@@ -1,0 +1,89 @@
+ </head>
+
+  <body>
+    <header>
+      <h1>One Currency Bitcoin Credit Union</h1>
+
+      <h1>Coming soon!</h1>
+
+      <img
+        id="img"
+        src="https://cdn.glitch.global/328406d4-d058-427a-ace8-5819b5525a22/onecurrecy%20logo.jpg?v=1669021824176"
+        alt="One Currency Logo"
+      />
+      <a href="https://instagram.com/onecurrency" target="_blank">
+        <img
+          src="https://cdn.glitch.global/328406d4-d058-427a-ace8-5819b5525a22/iglogo.png?v=1701520885448"
+          alt="Instagram Icon"
+        />
+        Follow us on Instagram
+      </a>
+
+      <!-- Add any navigation or header elements here -->
+    </header>
+
+    <main>
+      <!-- Your main content goes here -->
+      <p>
+        Welcome to One Currency Bitcoin Credit Union. Explore our crypto
+        financial services and manage your Bitcoin account.
+      </p>
+
+      <!-- Under Construction Message -->
+      <p>
+        We are currently under construction and working to be up and running
+        soon. Rest assured, we are taking all necessary measures to ensure
+        compliance with state and federal laws regarding Bitcoin and customer
+        regulations.
+      </p>
+
+      <!-- Example: Display Bitcoin account balance from Node.js backend -->
+
+      <!-- Login and Signup Buttons -->
+      <div>
+        <!-- Redirect to login.html on button click -->
+        <button onclick="window.location.href='/views/login.html'">
+          Login
+        </button>
+        <!-- Redirect to signup.html on button click -->
+        <button onclick="window.location.href='/views/signup.html'">
+          Sign Up
+        </button>
+        <!-- Redirect to dashboard.html on button click -->
+        <button onclick="window.location.href='/views/dashboard.html'">
+          Dashboard
+        </button>
+      </div>
+    </main>
+
+    <footer>
+      <!-- Add footer content here -->
+      <p>&copy; 2023 One Currency Bitcoin Credit Union. All rights reserved.</p>
+    </footer>
+
+    <!-- Include your scripts at the end of the body to ensure they run after the DOM has loaded -->
+    <script>
+      // Example: Fetch Bitcoin account balance from Node.js backend
+      fetch("/api/bitcoin/account/balance")
+        .then((response) => response.json())
+        .then((data) => {
+          document.getElementById("bitcoinBalance").innerText = data.balance;
+        })
+        .catch((error) =>
+          console.error("Error fetching Bitcoin balance:", error)
+        );
+
+      // Example: Show login modal
+      function showLoginModal() {
+        // Implement your login modal display logic here
+        alert("Login modal will be shown.");
+      }
+
+      // Example: Show signup modal
+      function showSignupModal() {
+        // Implement your signup modal display logic here
+        alert("Signup modal will be shown.");
+      }
+    </script>
+  </body>
+</html>

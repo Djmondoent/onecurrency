@@ -1,0 +1,82 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const bitcoin = require('bitcoinjs-lib');
+const nodemailer = require('nodemailer');
+
+const app = express();
+const port = 3000;
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Configure Nodemailer with your email service provider's details
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'your_email@gmail.com', // Replace with your email
+    pass: 'your_email_password', // Replace with your email password
+  },
+});
+
+const users = [];
+
+// ... (existing code) ...
+
+// Add a new route to handle the form submission
+app.post('/submitApplication', async (req, res) => {
+  try {
+    // Extract form data from the request
+    const {
+      // ... (extract all form fields)
+      email,
+      // ... (other fields)
+    } = req.body;
+
+    // Generate a Bitcoin address for the new user
+    const keyPair = bitcoin.ECPair.makeRandom();
+    const bitcoinAddress = keyPair.getAddress();
+
+    // Store user data in the array (replace with database storage in a real-world scenario)
+    const newUser = {
+      // ... (store all form fields)
+      email,
+      bitcoinAddress,
+      // ... (other fields)
+    };
+
+    users.push(newUser);
+
+    // Send a confirmation email
+    await sendConfirmationEmail(email, bitcoinAddress);
+
+    // Redirect or respond as needed
+    res.redirect('/confirmation'); // Redirect to a confirmation page
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+// Function to send a confirmation email
+async function sendConfirmationEmail(email, bitcoinAddress) {
+  const mailOptions = {
+    from: 'your_email@gmail.com', // Replace with your email
+    to: email,
+    subject: 'Account Confirmation',
+    text: `Thank you for signing up!\n\nYour Bitcoin address is: ${bitcoinAddress}`,
+  };
+
+  await transporter.sendMail(mailOptions);
+}
+
+// ... (existing code) ...
+
+// Serve the HTML file
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/signup.html');
+});
+
+// ... (existing code) ...
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});

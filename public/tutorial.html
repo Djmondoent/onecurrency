@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow" />
+    <title>OneCurrency Tutorial | Bitcoin Wallet Setup</title>
+    <meta name="description" content="OneCurrency tutorial: create a wallet, back up securely, claim sats, and learn how to send and receive Bitcoin." />
+    <link rel="canonical" href="https://onecurrency.net/tutorial.html" />
+    <meta name="theme-color" content="#0a0f1f" />
+    <meta name="application-name" content="OneCurrency" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://onecurrency.net/tutorial.html" />
+    <meta property="og:site_name" content="OneCurrency" />
+    <meta property="og:title" content="OneCurrency Tutorial | Bitcoin Wallet Setup" />
+    <meta property="og:description" content="OneCurrency tutorial: create a wallet, back up securely, claim sats, and learn how to send and receive Bitcoin." />
+    <meta property="og:image" content="https://onecurrency.net/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OneCurrency Tutorial | Bitcoin Wallet Setup" />
+    <meta name="twitter:description" content="OneCurrency tutorial: create a wallet, back up securely, claim sats, and learn how to send and receive Bitcoin." />
+    <meta name="twitter:image" content="https://onecurrency.net/assets/og.png" />
+    <style>
+      :root {
+        --bg: #0a0f1f;
+        --bg-soft: #0f172a;
+        --panel: #111827;
+        --panel-2: #0b1220;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --accent: #22d3ee;
+        --accent-2: #38bdf8;
+        --warn: #f59e0b;
+        --ok: #34d399;
+        --border: rgba(148, 163, 184, 0.18);
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        min-height: 100%;
+        font-family: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+        background: radial-gradient(1200px 600px at 15% -10%, rgba(34, 211, 238, 0.15), transparent 60%),
+                    radial-gradient(900px 500px at 90% 10%, rgba(56, 189, 248, 0.15), transparent 55%),
+                    var(--bg);
+        color: var(--text);
+      }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { color: var(--accent-2); }
+      .wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px 60px; }
+      .hero {
+        background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(15, 23, 42, 0.9));
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+      }
+      .hero h1 { margin: 0 0 10px; font-size: 32px; letter-spacing: 0.2px; }
+      .hero p { margin: 0; color: var(--muted); line-height: 1.6; }
+      .hero .cta { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
+      .btn {
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: #0b1220;
+        color: var(--text);
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-block;
+      }
+      .btn.primary { background: var(--accent); color: #0b1220; border-color: transparent; }
+      .btn.ghost { background: transparent; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 20px; }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 18px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      }
+      .card h2 { margin: 0 0 10px; font-size: 20px; }
+      .card h3 { margin: 0 0 8px; font-size: 17px; }
+      .section {
+        margin-top: 28px;
+        padding-top: 12px;
+        border-top: 1px solid var(--border);
+      }
+      .section h2 { margin: 0 0 8px; font-size: 24px; }
+      .section p { margin: 0; color: var(--muted); line-height: 1.6; }
+      .muted { color: var(--muted); }
+      .badge {
+        display: inline-block;
+        font-size: 12px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: rgba(34, 211, 238, 0.15);
+        color: var(--accent);
+        border: 1px solid rgba(34, 211, 238, 0.35);
+      }
+      ul, ol { margin: 8px 0 0; padding-left: 18px; line-height: 1.7; }
+      .note {
+        margin-top: 10px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        background: rgba(245, 158, 11, 0.08);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        color: #fcd34d;
+      }
+      .ok { color: var(--ok); }
+      .split {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+        margin-top: 16px;
+      }
+      .footer {
+        margin-top: 40px;
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .footer .links { display: flex; gap: 12px; flex-wrap: wrap; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="hero">
+        <span class="badge">OneCurrency Tutorial</span>
+        <h1>Your complete setup guide</h1>
+        <p>Set up a self-custody wallet, claim free sats, back up safely, and learn how to send and receive Bitcoin in minutes.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://onecurrency.net">Open OneCurrency</a>
+          <a class="btn ghost" href="/faq.html">Read the FAQ</a>
+          <a class="btn ghost" href="https://onecurrency.net/onefaucet/">Open Faucet</a>
+        </div>
+      </div>
+
+      <div class="section" id="getting-started">
+        <h2>Getting Started</h2>
+        <p>Set up your wallet, choose a domain, and finish the first backup.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h2>Quick Start: 3 steps</h2>
+          <ol>
+            <li>Choose your access point.</li>
+            <li>Create your wallet.</li>
+            <li>Back up your wallet.</li>
+          </ol>
+          <div class="muted" style="margin-top: 8px;">Target time: about 5 minutes.</div>
+        </div>
+        <div class="card">
+          <h2>Step 1: Choose your access point</h2>
+          <ul>
+            <li>Global users: <a href="https://onecurrency.net">onecurrency.net</a></li>
+            <li>African users: <a href="https://onecurrency.africa">onecurrency.africa</a></li>
+          </ul>
+          <div class="muted" style="margin-top: 8px;">Both versions are the same wallet. Pick the fastest for your region.</div>
+        </div>
+        <div class="card">
+          <h2>Step 2: Create your wallet (about 60 seconds)</h2>
+          <ol>
+            <li>Click "Create New Wallet".</li>
+            <li>Choose 12 words (recommended) or 24 words (extra security).</li>
+            <li>Set a wallet passphrase to encrypt your seed on this device.</li>
+            <li>Write down your recovery words in order.</li>
+            <li>Confirm the words and finish setup.</li>
+          </ol>
+          <div class="note">Never share your recovery words. OneCurrency will never ask for them.</div>
+        </div>
+      </div>
+
+      <div class="section" id="backups">
+        <h2>Backups &amp; Recovery</h2>
+        <p>Protect your seed phrase and store encrypted backups securely.</p>
+      </div>
+
+      <div class="split">
+        <div class="card">
+          <h2>Step 3: Backup your wallet (critical)</h2>
+          <ol>
+            <li>Open the "Backup" tab.</li>
+            <li>Export an encrypted backup.</li>
+            <li>Save the JSON and the QR code.</li>
+            <li>Store copies in safe places (email to yourself, cloud drive, USB, or password manager).</li>
+          </ol>
+          <div class="muted" style="margin-top: 8px;">Your backup is encrypted with your password.</div>
+        </div>
+        <div class="card">
+          <h2>Restore on a new device</h2>
+          <ol>
+            <li>Choose "Restore" on the new device.</li>
+            <li>Enter your seed phrase or import the encrypted backup.</li>
+            <li>Use the same backup password if you import JSON or QR.</li>
+            <li>Confirm your balance before wiping the old device.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="section" id="fees">
+        <h2>Fees &amp; Pricing</h2>
+        <p>Know what you pay before you send.</p>
+      </div>
+
+      <div class="card">
+        <h2>How fees work</h2>
+        <ul>
+          <li>Receiving is free. The sender pays the network fee.</li>
+          <li>Sending includes the fixed platform fee (0.00003337 BTC) plus the Bitcoin network fee.</li>
+          <li>Higher network fees usually confirm faster.</li>
+        </ul>
+      </div>
+
+      <div class="split">
+        <div class="card">
+          <h2>How to receive Bitcoin</h2>
+          <ol>
+            <li>Open "Receive".</li>
+            <li>Copy your address or show the QR code.</li>
+            <li>Share it with the sender.</li>
+          </ol>
+          <div class="muted" style="margin-top: 8px;">OneCurrency creates new addresses for each payment for privacy.</div>
+        </div>
+        <div class="card">
+          <h2>How to send Bitcoin</h2>
+          <ol>
+            <li>Open "Send".</li>
+            <li>Paste the recipient address.</li>
+            <li>Enter the amount in BTC or sats.</li>
+            <li>Review the fee estimate and confirm.</li>
+          </ol>
+          <div class="muted" style="margin-top: 8px;">Low fee = slower confirmation. High fee = faster confirmation.</div>
+        </div>
+      </div>
+
+      <div class="section" id="privacy">
+        <h2>Privacy &amp; Trust</h2>
+        <p>Keep your keys private and avoid phishing.</p>
+      </div>
+
+      <div class="card">
+        <h2>Privacy basics</h2>
+        <ul>
+          <li>Your private keys stay on your device.</li>
+          <li>Bitcoin transactions are public on the blockchain.</li>
+          <li>Always verify the official domain before entering anything sensitive.</li>
+        </ul>
+      </div>
+
+      <div class="section" id="safety">
+        <h2>Safety &amp; Dont Lose Money</h2>
+        <p>Simple habits that prevent irreversible mistakes.</p>
+      </div>
+
+      <div class="split">
+        <div class="card">
+          <h2>Security best practices</h2>
+          <h3 class="ok">Do</h3>
+          <ul>
+            <li>Write down your recovery words.</li>
+            <li>Store encrypted backups in multiple places.</li>
+            <li>Use a strong wallet passphrase.</li>
+            <li>Verify addresses before sending.</li>
+            <li>Start with small amounts.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Security best practices</h2>
+          <h3 style="color: var(--warn);">Do not</h3>
+          <ul>
+            <li>Share your recovery words with anyone.</li>
+            <li>Store recovery words in plain text.</li>
+            <li>Take photos of your recovery words.</li>
+            <li>Reuse the same address for every payment.</li>
+            <li>Skip the backup step.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section" id="faucet">
+        <h2>Faucet</h2>
+        <p>Claim free sats and understand faucet limits.</p>
+      </div>
+
+      <div class="card">
+        <h2>Claim free sats</h2>
+        <ol>
+          <li>Open <a href="https://onecurrency.net/onefaucet/">onecurrency.net/onefaucet/</a>.</li>
+          <li>Paste your receiving address from the "Receive" tab.</li>
+          <li>Complete the captcha and claim sats.</li>
+          <li>Repeat hourly or use auto-claim.</li>
+        </ol>
+        <div class="muted" style="margin-top: 8px;">Minimum withdrawal: 30,000 sats. Manual review takes 24-48 hours.</div>
+      </div>
+
+      <div class="footer">
+        <div>OneCurrency Tutorial</div>
+        <div class="links">
+          <a href="/faq.html">FAQ</a>
+          <a href="https://onecurrency.net">Open wallet</a>
+          <a href="https://onecurrency.net/onefaucet/">Faucet</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

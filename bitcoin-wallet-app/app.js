@@ -1,0 +1,1 @@
+bitcoin-cli -rpcuser=node7 -rpcpassword=77874Dafamily! getnewaddress
