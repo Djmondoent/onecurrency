@@ -1062,7 +1062,7 @@ const DICT_BASE = {
   'auto.896': 'Passphrase required to broadcast',
   'auto.897': 'bc1...\nbc1...\n...',
   'auto.898': 'Live USD price unavailable',
-  'auto.899': 'One Currency platform fee per mainnet transaction. Separate from the Bitcoin network (miner) fee.',
+  'auto.899': 'One Currency platform fee: 3,337 sats per mainnet transaction. Separate from the Bitcoin network (miner) fee.',
   'auto.900': 'USD n/a',
   'auto.901': 'sendScanMainnet',
   'auto.902': 'Sign &amp; Send',
