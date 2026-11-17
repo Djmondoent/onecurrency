@@ -224,7 +224,7 @@ export default function Send({ fromAddress, onBroadcasted }: { fromAddress: stri
         </label>
         <div className="note" style={{ marginTop: 8 }}>
           <div className="kv">Fees — charged on every send</div>
-          <div className="subtle" style={{ marginTop: 4 }}>Platform fee: {PLATFORM_FEE_SATS} sats (fixed, per transaction)</div>
+          <div className="subtle" style={{ marginTop: 4 }}>Platform fee: {PLATFORM_FEE_SATS} sats (fixed, per send transaction)</div>
           <div className="subtle">Network (miner) fee: {feeRate ? `about ${estimateTxFeeSats(1, 3, feeRate)} sats at ${feeRate} sat/vB for a typical 1-recipient send — the exact fee is shown below once you enter recipients and an amount` : 'loading fee rate…'}</div>
         </div>
         {utxoErr && <div className="alert" style={{ marginTop: 8 }}>{utxoErr}</div>}
