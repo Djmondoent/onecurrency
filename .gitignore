@@ -9,3 +9,6 @@ dist
 # Release binaries (published via GitHub Releases instead)
 ios_source.tar.gz
 *.apk
+
+# Local staging for release signing (assets are published on GitHub Releases)
+release-signing/
