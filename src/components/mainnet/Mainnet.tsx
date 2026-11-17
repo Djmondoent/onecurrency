@@ -2812,7 +2812,7 @@ export default function Mainnet({ mode = 'beginner', onWalletChange }: { mode?: 
                   <div>
                     <div className="tweet-preview-host">onecurrency.net</div>
                     <div className="tweet-preview-title">OneCurrency - a non-custodial Bitcoin wallet for self-custody</div>
-                    <div className="tweet-preview-desc">Self-custody Bitcoin wallet. Proposed credit union formation (not yet chartered or insured). Fee per transaction.</div>
+                    <div className="tweet-preview-desc">Self-custody Bitcoin wallet. Proposed credit union formation (not yet chartered or insured). Fee per send transaction.</div>
                   </div>
                 </div>
                 <div className="tweet-meta">6:03 PM - Dec 18, 2025</div>

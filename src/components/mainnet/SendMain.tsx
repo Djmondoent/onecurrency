@@ -305,7 +305,7 @@ export default function SendMain({ fromAddress, onBroadcasted, requestPassphrase
         {est && (
           <>
             <div className="subtle" style={{ marginTop: 8 }}>
-              <span title="One Currency platform fee: 3,337 sats per mainnet transaction. Separate from the Bitcoin network (miner) fee.">
+              <span title="One Currency platform fee: 3,337 sats per mainnet send transaction. Separate from the Bitcoin network (miner) fee.">
                 Platform fee
               </span>: {PLATFORM_FEE_SATS} sats ({btcUsd ? <>{'\u2248 '}{fmtUSD(PLATFORM_FEE_SATS * usdPerSat)}</> : 'USD n/a'})
             </div>
