@@ -32,12 +32,12 @@
     "bitcoinjs-lib": "^6.1.5",
     "buffer": "^6.0.3",
     "qrcode.react": "^4.2.0",
-    "react": "^18.2.0",
+    "react": "^19.3.1",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.12.12",
-    "@types/react": "^18.2.73",
+    "@types/react": "^19.3.0",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.3.1",
     "baseline-browser-mapping": "^2.10.0",
