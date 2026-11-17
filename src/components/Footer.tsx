@@ -37,6 +37,28 @@ export default function Footer({ variant = 'advanced' }: FooterProps) {
 
   return (
     <footer style={{ marginTop: 24, padding: '16px 0', borderTop: '1px solid rgba(148,163,184,0.15)', color: '#94a3b8', lineHeight: 1.6 }}>
+      <section aria-label="Open source project" style={{ marginBottom: 20, padding: '18px 20px', border: '1px solid rgba(148,163,184,0.25)', borderRadius: 12, background: 'linear-gradient(180deg, rgba(30,41,59,0.55), rgba(15,23,42,0.55))' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+          <div className="kv" style={{ fontWeight: 700, color: '#f1f5f9', fontSize: 17 }}>Open Source Project</div>
+          <span style={{ padding: '2px 8px', borderRadius: 999, background: 'rgba(14,165,233,0.15)', color: '#7dd3fc', border: '1px solid rgba(14,165,233,0.4)', fontSize: 12, fontWeight: 600 }}>MIT License</span>
+        </div>
+        <p style={{ margin: '10px 0 0', color: '#cbd5e1', maxWidth: 760 }}>
+          OneCurrency is a fully open-source, self-custody Bitcoin wallet. The complete source code for this website — the wallet, encryption, and transaction code — is public, so anyone can verify exactly how it works. No hidden code and no custodial accounts: your keys stay on your device.
+        </p>
+        <div style={{ marginTop: 12, color: '#94a3b8' }}>
+          <div style={{ fontWeight: 600, color: '#e2e8f0', marginBottom: 6 }}>Audit the code yourself</div>
+          <ol style={{ margin: 0, paddingLeft: 18, lineHeight: 1.7 }}>
+            <li>Open the public repository: <a href="https://github.com/Djmondoent/onecurrency" target="_blank" rel="noreferrer" style={{ color: '#7dd3fc' }}>github.com/Djmondoent/onecurrency</a></li>
+            <li>Review the wallet and cryptography code under <span className="mono">src/lib</span>, and compare any release against its tagged source.</li>
+            <li>Found something? Open an issue or report a security concern on GitHub — independent audits and pull requests are welcome.</li>
+          </ol>
+        </div>
+        <div className="row" style={{ gap: 10, flexWrap: 'wrap', marginTop: 14 }}>
+          <a href="https://github.com/Djmondoent/onecurrency" target="_blank" rel="noreferrer" style={{ padding: '9px 14px', background: '#f8fafc', color: '#0b1220', borderRadius: 8, fontWeight: 700, textDecoration: 'none' }}>View source on GitHub</a>
+          <a className="btn" href="https://github.com/Djmondoent/onecurrency/releases/tag/v17.5" target="_blank" rel="noreferrer">Latest release: v17.5</a>
+          <a className="btn" href="https://github.com/Djmondoent/onecurrency/issues" target="_blank" rel="noreferrer">Report an issue</a>
+        </div>
+      </section>
       {variant === 'advanced' && (
         <>
           <div className="kv" style={{ fontWeight: 600, color: '#e2e8f0' }}>Features</div>
