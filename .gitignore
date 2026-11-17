@@ -1,0 +1,11 @@
+node_modules
+dist
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+
+# Release binaries (published via GitHub Releases instead)
+ios_source.tar.gz
+*.apk

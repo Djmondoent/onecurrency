@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow" />
+    <title>OneCurrency FAQ | Bitcoin Wallet Help</title>
+    <meta name="description" content="Answers about OneCurrency: custody, backups, fees, privacy, faucet questions, and common Bitcoin safety issues." />
+    <link rel="canonical" href="https://onecurrency.net/faq.html" />
+    <meta name="theme-color" content="#0a0f1f" />
+    <meta name="application-name" content="OneCurrency" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://onecurrency.net/faq.html" />
+    <meta property="og:site_name" content="OneCurrency" />
+    <meta property="og:title" content="OneCurrency FAQ | Bitcoin Wallet Help" />
+    <meta property="og:description" content="Answers about OneCurrency: custody, backups, fees, privacy, faucet questions, and common Bitcoin safety issues." />
+    <meta property="og:image" content="https://onecurrency.net/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OneCurrency FAQ | Bitcoin Wallet Help" />
+    <meta name="twitter:description" content="Answers about OneCurrency: custody, backups, fees, privacy, faucet questions, and common Bitcoin safety issues." />
+    <meta name="twitter:image" content="https://onecurrency.net/assets/og.png" />
+    <style>
+      :root {
+        --bg: #0a0f1f;
+        --panel: #111827;
+        --panel-2: #0b1220;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --accent: #22d3ee;
+        --border: rgba(148, 163, 184, 0.18);
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        min-height: 100%;
+        font-family: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+        background: radial-gradient(1100px 520px at 85% -10%, rgba(34, 211, 238, 0.12), transparent 55%),
+                    radial-gradient(900px 500px at 10% 20%, rgba(56, 189, 248, 0.14), transparent 60%),
+                    var(--bg);
+        color: var(--text);
+      }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .wrap { max-width: 900px; margin: 0 auto; padding: 40px 20px 60px; }
+      .hero {
+        background: linear-gradient(130deg, rgba(17, 24, 39, 0.95), rgba(15, 23, 42, 0.95));
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+      }
+      .hero h1 { margin: 0 0 8px; font-size: 30px; }
+      .hero p { margin: 0; color: var(--muted); }
+      .cta { margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap; }
+      .btn {
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: #0b1220;
+        color: var(--text);
+        font-weight: 600;
+        display: inline-block;
+      }
+      .btn.primary { background: var(--accent); color: #0b1220; border-color: transparent; }
+      .faq { margin-top: 20px; display: grid; gap: 12px; }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 16px 18px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.24);
+      }
+      .section {
+        margin-top: 26px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border);
+      }
+      .section h2 { margin: 0 0 6px; font-size: 20px; }
+      .section p { margin: 0; color: var(--muted); line-height: 1.6; }
+      .card h3 { margin: 0 0 6px; font-size: 18px; }
+      .card p { margin: 0; color: var(--muted); line-height: 1.6; }
+      .footer {
+        margin-top: 40px;
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .footer .links { display: flex; gap: 12px; flex-wrap: wrap; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="hero">
+        <h1>OneCurrency FAQ</h1>
+        <p>Answers to the most common questions about security, fees, backups, and wallet use.</p>
+        <div class="cta">
+          <a class="btn primary" href="/tutorial.html">Read the tutorial</a>
+          <a class="btn ghost" href="https://onecurrency.net">Open OneCurrency</a>
+        </div>
+      </div>
+
+      <div class="faq">
+        <div class="card" id="toc">
+          <h3>Jump to a section</h3>
+          <p>
+            <a href="#getting-started">Getting Started</a> |
+            <a href="#safety">Safety &amp; Dont Lose Money</a> |
+            <a href="#backups">Backups &amp; Recovery</a> |
+            <a href="#fees">Fees &amp; Pricing</a> |
+            <a href="#privacy">Privacy &amp; Trust</a> |
+            <a href="#faucet">Faucet</a>
+          </p>
+        </div>
+
+        <div class="section" id="getting-started">
+          <h2>Getting Started</h2>
+          <p>Core questions about what OneCurrency is and how to begin. <a href="/tutorial.html#getting-started">Go to tutorial section</a></p>
+        </div>
+        <div class="card">
+          <h3>Is OneCurrency custodial or non-custodial?</h3>
+          <p>Non-custodial. You hold the keys. OneCurrency never has access to your Bitcoin.</p>
+        </div>
+        <div class="card">
+          <h3>What cryptocurrencies does OneCurrency support?</h3>
+          <p>OneCurrency is a Bitcoin (BTC) wallet. It's built for Bitcoin transactions and Bitcoin backups (seed phrase).</p>
+        </div>
+        <div class="card">
+          <h3>Can I import an existing Bitcoin wallet into OneCurrency?</h3>
+          <p>Yes. If you have your seed phrase, you can restore or import the wallet in OneCurrency.</p>
+        </div>
+        <div class="card">
+          <h3>Can I create multiple Bitcoin wallets in OneCurrency?</h3>
+          <p>Yes. If you want to separate funds (savings vs spending), create separate wallets and back up each one individually.</p>
+        </div>
+        <div class="card">
+          <h3>Do I need to provide ID or KYC?</h3>
+          <p>No. There is no KYC. You can create a wallet without signup.</p>
+        </div>
+
+        <div class="section" id="safety">
+          <h2>Safety &amp; Dont Lose Money</h2>
+          <p>Common safety issues and what to do when something goes wrong. <a href="/tutorial.html#safety">Go to tutorial section</a></p>
+        </div>
+        <div class="card">
+          <h3>What happens if I send Bitcoin to the wrong address?</h3>
+          <p>Bitcoin transactions are irreversible. Always double-check the address (or scan a QR code) before sending.</p>
+        </div>
+        <div class="card">
+          <h3>What happens if I send Bitcoin to an exchange or merchant and they say they didn't get it?</h3>
+          <p>Confirm the transaction ID on a Bitcoin block explorer and verify the receiving address matches and the transaction has confirmations. If the address is correct and it's confirmed, the recipient must credit it on their side.</p>
+        </div>
+        <div class="card">
+          <h3>What if my transaction is stuck (pending) for a long time?</h3>
+          <p>This usually happens when the network fee is too low during high congestion. You can either wait, or (if your wallet supports it) use a fee bump option to speed it up.</p>
+        </div>
+
+        <div class="section" id="backups">
+          <h2>Backups &amp; Recovery</h2>
+          <p>How to protect your seed phrase and restore safely. <a href="/tutorial.html#backups">Go to tutorial section</a></p>
+        </div>
+        <div class="card">
+          <h3>What if I lose my phone or laptop?</h3>
+          <p>If you backed up your wallet (encrypted JSON or QR), you can restore on any device with the backup and password. If you did not back up, the funds are unrecoverable.</p>
+        </div>
+        <div class="card">
+          <h3>What if OneCurrency shuts down?</h3>
+          <p>Your Bitcoin is safe. Your seed phrase works with any compatible wallet like Electrum, BlueWallet, or Sparrow.</p>
+        </div>
+        <div class="card">
+          <h3>What's the difference between the seed phrase and the encrypted backup (JSON/QR)?</h3>
+          <p>Seed phrase: universal recovery method that works with many compatible Bitcoin wallets. Encrypted backup (JSON/QR): convenient restore for OneCurrency, protected by your password. Best practice: store both, separately.</p>
+        </div>
+        <div class="card">
+          <h3>Where should I store my seed phrase?</h3>
+          <p>Offline, in at least two separate secure places (e.g., a safe plus locked storage). Never store it in plain text in email, notes apps, or cloud drives.</p>
+        </div>
+        <div class="card">
+          <h3>Can someone steal my Bitcoin if they get my seed phrase?</h3>
+          <p>Yes. Anyone with your seed phrase can control the funds. Treat it like the master key to your money.</p>
+        </div>
+        <div class="card">
+          <h3>If I change phones, how do I move my OneCurrency wallet?</h3>
+          <p>Restore on the new device using your seed phrase or encrypted backup plus password. Then confirm you can see your balance before wiping the old device.</p>
+        </div>
+        <div class="card">
+          <h3>Is my backup secure?</h3>
+          <p>Encrypted backups are protected by your password. Keep the password secret and store backups in multiple safe places.</p>
+        </div>
+
+        <div class="section" id="fees">
+          <h2>Fees &amp; Pricing</h2>
+          <p>Clear answers about network fees and platform fees. <a href="/tutorial.html#fees">Go to tutorial section</a></p>
+        </div>
+        <div class="card">
+          <h3>What are the fees?</h3>
+          <p>Receiving is free. Sending includes the fixed platform fee (0.00003337 BTC) plus the Bitcoin network fee, which is shown before you send.</p>
+        </div>
+        <div class="card">
+          <h3>Why do Bitcoin network fees change?</h3>
+          <p>Bitcoin network fees fluctuate based on demand (mempool congestion). When more people are transacting, fees rise.</p>
+        </div>
+        <div class="card">
+          <h3>Does OneCurrency charge a fee to receive Bitcoin?</h3>
+          <p>No platform fee is applied to receiving. Receiving may still involve the sender's network fee.</p>
+        </div>
+        <div class="card">
+          <h3>Does OneCurrency charge the $3 platform fee for every send transaction?</h3>
+          <p>Yes. Each send includes the fixed platform fee (0.00003337 BTC) plus the variable Bitcoin network fee.</p>
+        </div>
+        <div class="card">
+          <h3>Can the platform fee change?</h3>
+          <p>If it changes in the future, it should be clearly shown before you send.</p>
+        </div>
+        <div class="card">
+          <h3>How long do transactions take?</h3>
+          <p>It depends on the fee. Higher fees confirm faster. OneCurrency shows fee estimates so you can choose your speed.</p>
+        </div>
+
+        <div class="section" id="privacy">
+          <h2>Privacy &amp; Trust</h2>
+          <p>What OneCurrency can and cannot see, plus phishing protection. <a href="/tutorial.html#privacy">Go to tutorial section</a></p>
+        </div>
+        <div class="card">
+          <h3>Does OneCurrency track my Bitcoin balance or transactions?</h3>
+          <p>Your private keys stay on your device. Bitcoin transactions are public on the blockchain. Any additional tracking depends on your site or app analytics choices, so keep it simple and transparent.</p>
+        </div>
+        <div class="card">
+          <h3>How can I avoid phishing sites pretending to be OneCurrency?</h3>
+          <p>Only use the official domain and bookmark it. Never enter your seed phrase on random sites. OneCurrency will never ask you for your seed phrase to verify anything.</p>
+        </div>
+
+        <div class="section" id="faucet">
+          <h2>Faucet</h2>
+          <p>Common support questions and anti-abuse limits. <a href="/tutorial.html#faucet">Go to tutorial section</a></p>
+        </div>
+        <div class="card">
+          <h3>How do I claim free sats?</h3>
+          <p>Open <a href="https://onecurrency.net/onefaucet/">onecurrency.net/onefaucet/</a>, paste your receiving address, solve the captcha, and claim. Withdrawals start at 30,000 sats.</p>
+        </div>
+        <div class="card">
+          <h3>Why is there a minimum faucet withdrawal (30,000 sats)?</h3>
+          <p>Minimums prevent spam and reduce overhead. It's a threshold to keep the faucet sustainable.</p>
+        </div>
+        <div class="card">
+          <h3>What if the faucet says try again later or blocks my claim?</h3>
+          <p>Faucets often rate-limit to prevent abuse. Try later and make sure you're using a valid Bitcoin address.</p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div>OneCurrency FAQ</div>
+        <div class="links">
+          <a href="/tutorial.html">Tutorial</a>
+          <a href="https://onecurrency.net">Open wallet</a>
+          <a href="https://onecurrency.net/onefaucet/">Faucet</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
