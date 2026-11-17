@@ -29,7 +29,7 @@ export default function CreditUnion({ network }: Props) {
     setStatus(t('credit.status.submitted'))
   }
 
-  const faucetUrl = network === 'testnet' ? 'https://coinfaucet.eu/en/btc-testnet/' : '/onefaucet/index.html'
+  const faucetUrl = 'https://coinfaucet.eu/en/btc-testnet/' // Faucet is testnet only (audit 2026-11-17)
   const walletCta = network === 'mainnet' ? t('credit.walletCta.mainnet') : t('credit.walletCta.testnet')
 
   return (

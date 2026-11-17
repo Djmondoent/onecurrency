@@ -141,7 +141,7 @@ export default function Footer({ variant = 'advanced' }: FooterProps) {
           </div>
           <div>
             <div className="subtle">
-              If you like this project, consider donating to support the developers and keep the free Bitcoin faucet running. Thank you.
+              If you like this project, consider donating to support the developers and keep the free testnet Bitcoin faucet running. Thank you.
             </div>
             <div className="mono" style={{ marginTop: 6, wordBreak: 'break-all' }}>{donationAddress}</div>
             <div className="row" style={{ marginTop: 8 }}>

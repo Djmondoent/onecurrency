@@ -2746,12 +2746,11 @@ export default function Mainnet({ mode = 'beginner', onWalletChange }: { mode?: 
       {tab === 'credit' && <CreditUnion network="mainnet" />}
       {tab === 'faucet' && (
         <section>
-          <WindowShell id="faucet" title="OneCurrency Faucet">
+          <WindowShell id="faucet" title="Testnet Faucet">
             <p className="subtle" style={{ marginTop: 6 }}>
-              Claim sats from the OneCurrency faucet. Withdraw when you reach the minimum threshold.
+              Faucet is testnet only. There is no mainnet faucet for now. Switch to testnet mode to claim free testnet coins (tBTC) for practice.
             </p>
             <div className="row" style={{ marginTop: 12, gap: 8 }}>
-              <a className="btn btn-primary" href="https://onecurrency.net/onefaucet/" target="_blank" rel="noreferrer">Open Faucet</a>
               <button className="btn" onClick={() => setTab('wallet')}>Back to Wallet</button>
             </div>
           </WindowShell>
@@ -2759,15 +2758,14 @@ export default function Mainnet({ mode = 'beginner', onWalletChange }: { mode?: 
       )}
 
       {/* Faucet banner */}
-      <WindowShell id="faucetBanner" title="Claim free sats" className="mt-12" style={{ borderLeft: '4px solid #22d3ee' }}>
+      <WindowShell id="faucetBanner" title="Testnet faucet" className="mt-12" style={{ borderLeft: '4px solid #22d3ee' }}>
         <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
           <div>
             <p className="subtle" style={{ marginTop: 4, maxWidth: 640 }}>
-              Promote OneCurrency and stack sats hourly. Fast claims, captcha protected, withdraw once you hit 30,000 sats.
+              Faucet is testnet only. Switch to testnet mode to claim free testnet coins (tBTC) for practice. No real BTC is given away.
             </p>
           </div>
           <div className="row" style={{ gap: 8 }}>
-            <a className="btn btn-primary" href="/onefaucet/index.html" target="_blank" rel="noreferrer">Open Faucet</a>
             <button className="btn" onClick={() => setAboutOpen(true)}>About OneCurrency</button>
           </div>
         </div>

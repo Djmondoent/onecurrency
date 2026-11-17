@@ -158,7 +158,7 @@ const DICT_BASE = {
   'credit.form.agree': 'I understand loans are secured up to 86% LTV and subject to margin calls.',
   'credit.form.submit': 'Submit Application',
   'credit.flowTitle': 'Faucet + Wallet flow',
-  'credit.flowBody': 'Start with free sats from the faucet, grow your stack in the OneCurrency wallet, and unlock up to 86% credit against your holdings when you need liquidity.',
+  'credit.flowBody': 'Start with free testnet coins (tBTC) from a testnet faucet, grow your stack in the OneCurrency wallet, and unlock up to 86% credit against your holdings when you need liquidity.',
   'credit.openFaucet': 'Open Faucet',
   'credit.goToWallet': 'Go to Wallet',
   'credit.error.missingFields': 'Please fill name, email, BTC address, and desired line size.',

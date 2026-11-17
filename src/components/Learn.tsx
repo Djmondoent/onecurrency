@@ -6,7 +6,7 @@ type Topic = { id: string; title: string; points: string[]; cta?: { label: strin
 
 const topics: Topic[] = [
   { id: 'sats', title: 'Satoshi 101', points: ['1 BTC = 100,000,000 sats', 'Sats make small payments easy to read', 'Use the converter to check value quickly'] },
-  { id: 'faucet', title: 'What is a Bitcoin Faucet?', points: ['A faucet gives small amounts of BTC so you can test sending and receiving', 'Use faucets for learning only; they are not for earning real income', 'Claim, send to your wallet, and practice backing up your keys'], cta: { label: 'Open OneCurrency Faucet', href: 'https://onecurrency.net/onefaucet' } },
+  { id: 'faucet', title: 'What is a Bitcoin Faucet?', points: ['A testnet faucet gives small amounts of testnet BTC (tBTC) so you can test sending and receiving', 'Use faucets for learning only; testnet coins have no monetary value', 'Claim, send to your wallet, and practice backing up your keys'], cta: { label: 'Open Testnet Faucet', href: 'https://coinfaucet.eu/en/btc-testnet/' } },
   { id: 'what-bitcoin', title: 'What is Bitcoin?', points: ['Digital cash with no company or bank in charge', 'Runs on a public network secured by miners', 'You hold value with a wallet and a recovery phrase'] },
   { id: 'what-money', title: 'What is Money?', points: ['A shared way to store and trade value', 'Good money is scarce, portable, and hard to fake', 'Bitcoin is digital, scarce, and moves globally in minutes'] },
   { id: 'mining', title: 'Bitcoin Mining', points: ['Miners bundle transactions into blocks', 'They compete with energy + hardware to add blocks', 'Honest work secures the network and earns new BTC + fees'] },
