@@ -37,7 +37,7 @@ jobs:
         run: zip -r onecurrency-web-${{ github.ref_name }}.zip dist
 
       - name: Attest build provenance
-        uses: actions/attest-build-provenance@v2
+        uses: actions/attest-build-provenance@v4
         with:
           subject-path: onecurrency-web-${{ github.ref_name }}.zip
 
