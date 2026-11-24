@@ -44,7 +44,7 @@
     "concurrently": "^10.0.7",
     "cross-env": "^7.0.3",
     "electron": "^31.7.7",
-    "electron-builder": "^24.13.3",
+    "electron-builder": "^26.18.0",
     "jimp": "^0.22.12",
     "neocities": "*",
     "png-to-ico": "^2.1.8",
