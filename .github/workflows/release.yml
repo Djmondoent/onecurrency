@@ -42,7 +42,7 @@ jobs:
           subject-path: onecurrency-web-${{ github.ref_name }}.zip
 
       - name: Create GitHub release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: onecurrency-web-${{ github.ref_name }}.zip
           generate_release_notes: true
